@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snap Collector</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="main-menu">
+    <h1>Foto-Sammelspiel</h1>
+    <button onclick="startGame()">Spiel Starten</button>
+    <button onclick="showInstructions()">Anleitung</button>
+  </div>
+
+  <div id="instructions" class="hidden">
+    <h2>Anleitung</h2>
+    <p>In diesem Spiel geht es darum, alles Mögliche aus dem echten Leben zu fotografieren.</p>
+    <p>Fotografiere Dinge und füge sie in der Galerie dem passenden Begriff hinzu.</p>
+    <p>Bei Läden (z. B. Lidl, Rewe) musst du Fotos von <b>echten Filialen</b> machen.</p>
+    <p>Bei Elektronikmarken (z. B. Apple, LG) reicht ein <b>Produkt mit Logo</b>.</p>
+    <p>Ziel: Vervollständige alle Kategorien – dann hast du das Spiel geschafft!</p>
+    <button onclick="backToMenu()">Zurück</button>
+  </div>
+
+  <div id="gallery" class="hidden">
+    <div class="top-bar">
+      <input type="text" id="search" placeholder="Begriff suchen ..." oninput="filterGallery()" />
+      <div id="progress">Fortschritt: 0%</div>
+      <button onclick="backToMenu()">Menü</button>
+    </div>
+    <div id="gallery-content"></div>
+  </div>
+
+  <input type="file" id="photo-input" accept="image/*" class="hidden" />
+  <script src="main.js"></script>
+</body>
+</html>
